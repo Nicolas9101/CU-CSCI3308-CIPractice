@@ -69,3 +69,13 @@ void coord_2d_midpoint(coord_2d_t* mid, const coord_2d_t* a, const coord_2d_t* b
     mid->y = ((a->y + b->y) / 2.0 );
 
 }
+double coord_2d_area_triangle(const	coord_2d_t*	a, const coord_2d_t* b, const coord_2d_t* c){
+	double p1 = a->x * (b->y - c->y);
+	double p2 = b->x * (c->y - a->y);
+	double p3 = c->x * (a->y - b->y);
+	
+	double sum = (p1 + p2 + p3)/2;
+	double answer = fabs(sum);
+	
+	return answer;
+}
